@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Select a city</h2>
+        <div class="inputdiv">
+            <select id="input">
+                <option value="Chennai">Chennai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Mumbai">Mumbai</option>
+            </select> 
+        </div>
+        <div>
+            <button type="submit">Show Stats</button>
+        </div>
+        <div id="result">
+
+    <script>
+
+        const but=document.querySelector('button');
+        
+        let result=document.createElement('div');
+        result.id="result";
+        document.getElementById('wrapper').appendChild(result);
+
+        but.addEventListener('click',show);
+
+        function show(){
+            const input=document.getElementById('input');
+            const city=input.options[input.selectedIndex].value;
+            //console.log(city);
+            let population=0,litRate=0.0,lang="";
+            switch(city){
+                case 'Chennai':
+                    population=300000;
+                    lang="Tamil";
+                    litRate=87.9;
+                    break;
+                case 'Banglore':
+                    population=50000;
+                    lang="Canada";
+                    litRate=94.9;
+                    break;
+                case 'Mumbai':
+                    population=90000;
+                    lang="Hindi";
+                    litRate=27.2;
+                    break;
+            }
+            //console.log(`${city} has a population of ${population}. Language spoken is ${lang} and litercy Rate is ${litRate}`);
+            let res=`${city} has a population of ${population}. Language spoken is ${lang} and litercy Rate is ${litRate}` ;
+            
+            document.getElementById('result').innerHTML=res;
+
+        }
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <div id="wrapper">
+            <span id="hours">00</span>
+            <span >:</span>
+            <span id="mins">00</span>
+            <span >:</span>
+            <span id="seconds">00</span>
+            <span id="ampm">AM</span>
+            
+        </div>
+    </div>
+
+    <script>
+        let hours=document.getElementById("hours");
+        let mins=document.getElementById("mins");
+        let seconds=document.getElementById("seconds");
+        let ampm=document.getElementById("ampm");
+       function display(){
+            let date=new Date();
+            let h=date.getHours();
+            let m=date.getMinutes();
+            let s=date.getSeconds();
+            if(h>12){
+                h-=12;
+                ampm.innerHTML="PM"; 
+            }
+            hours.innerHTML=addZero(h);
+            mins.innerHTML=addZero(m);
+            seconds.innerHTML=addZero(s);
+    
+       }
+       function addZero(num){
+            if(num<10)
+                return "0"+num;
+            else
+                return num;
+       }
+
+
+       
+       setInterval(display,500);
+    </script>
+</body>
+</html>

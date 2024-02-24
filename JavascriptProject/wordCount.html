@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Word Count</h2>
+        <div class="inputdiv">
+            <textarea id="input" rows="20" cols="40"></textarea>
+        </div>
+        <div>
+            <button type="submit" onclick="convert()">Count the Words</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script >
+        // let name="Murugeshwari";
+        // let r=Math.floor(Math.random()*name.length);
+        // console.log(name[r]);
+        function convert(){
+            let str=document.getElementById("input").value;
+            let array=str.split(' ');
+            console.log(array.length);
+        }
+        
+    </script>
+</body>
+</html>

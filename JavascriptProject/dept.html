@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        h3{
+            color:white;
+            text-align: center;
+        }
+        #wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+       }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h3>Select your Department</h3>
+        <div id="inputdiv">
+            <select id="input">
+                <option id="select">Select</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" onclick="showDepartment()">Result</button>
+        </div>
+        
+        <div id="result">
+
+        </div>
+    </div> 
+    <script>
+        
+            array=['IT','CSE','MECH','CIVIL','ECE'];
+            array.forEach(val=>{
+                let select=document.getElementById('input');
+                let option=document.createElement('option');
+                option.value=val;
+                option.textContent=val;
+                select.appendChild(option);
+        
+            })
+
+            function showDepartment(){
+                let res=document.getElementById("result");
+                let input=document.getElementById('input');
+                let result=input.options[input.selectedIndex].value;
+                res.innerHTML=result;
+            }
+        
+    </script>   
+</body>
+</html>
