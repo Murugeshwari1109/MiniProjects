@@ -3,8 +3,13 @@ let todo=document.getElementById('todoList');
 let input=document.getElementById('input');
 
 let arr=[]
+window.onload=()=>{
+    arr=JSON.parse(localStorage.getItem('arr'))||[];
+    arr.forEach(element=>addTOlist(element)); 
+}
 but.addEventListener('click',()=>{
     arr.push(input.value);
+     localStorage.setItem('arr',JSON.stringify(arr));
     addTOlist(input.value);
     input.value='';
 })
@@ -26,4 +31,5 @@ function remove(val){
     if(index>-1){
         arr.splice(index,1);
     }
+    localStorage.setItem('arr',JSON.stringify(arr));
 }
